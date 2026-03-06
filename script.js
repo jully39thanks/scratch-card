@@ -34,6 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
             desc: "邪竜眼！",
             isWin: true
         },
+                },
+                {
+            name: "3等：朱雀院賞",
+            image: "3_ranma.png", // ← ここを自分で用意した画像のファイル名に変更してください
+            desc: "ヴォロ・エルゴ・スム",
+            isWin: true
+        },
+                },
+                {
+            name: "4等：巳須田賞",
+            image: "4_misuta.png", // ← ここを自分で用意した画像のファイル名に変更してください
+            desc: "ハートブレイク！",
+            isWin: true
+        },
         {
             name: "アナアキー賞",
             image: "sonohoka_anaakey.png", // ← ここを自分で用意した画像のファイル名に変更してください
