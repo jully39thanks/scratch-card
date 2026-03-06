@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Scratch Lottery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="CYBER SCRATCH">CYBER SCRATCH</h1>
+            <p>Xでシェアしてスクラッチに挑戦！</p>
+        </header>
+
+        <div id="step-share" class="step active">
+            <div class="card">
+                <h2>CHALLENGE UNLOCKED?</h2>
+                <p>ボタンを押してキャンペーンをシェアすると、スクラッチを削れるようになります。</p>
+                <button id="btn-share" class="btn-cyber">
+                    <span class="btn-text">𝕏 でシェアして挑戦</span>
+                    <span class="btn-glitch">𝕏 でシェアして挑戦</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="step-scratch" class="step">
+            <div class="scratch-container">
+                <!-- Result underneath the scratch canvas -->
+                <div class="result-area" id="result-area">
+                    <h2 id="result-title"></h2>
+                    <img id="result-image" src="" alt="Prize Image">
+                    <p id="result-desc"></p>
+                </div>
+                <!-- Canvas for scratching -->
+                <canvas id="scratch-canvas" width="300" height="400"></canvas>
+            </div>
+            <p class="instruction blink">画面をタップ・ドラッグで削る</p>
+            <button id="btn-restart" class="btn-cyber hidden" style="margin-top: 20px;">
+                <span class="btn-text">もう一度挑戦する (Mock)</span>
+            </button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

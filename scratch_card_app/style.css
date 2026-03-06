@@ -1,0 +1,195 @@
+:root {
+    --bg-color: #050510;
+    --primary-color: #00f0ff;
+    --secondary-color: #ff003c;
+    --text-color: #ffffff;
+    --card-bg: rgba(10, 10, 25, 0.8);
+    --border-color: rgba(0, 240, 255, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(255, 0, 60, 0.1) 0%, transparent 50%);
+    overflow-x: hidden;
+}
+
+h1, h2, .orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.glitch {
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    color: var(--text-color);
+    text-shadow: 0 0 10px var(--primary-color);
+    letter-spacing: 2px;
+}
+
+.step {
+    display: none;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.step.active {
+    display: block;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Cyber Button */
+.btn-cyber {
+    position: relative;
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.btn-cyber:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--primary-color), inset 0 0 10px var(--bg-color);
+}
+
+.btn-glitch {
+    display: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Scratch Area */
+.scratch-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 0, 60, 0.3);
+    border: 2px solid var(--secondary-color);
+}
+
+.result-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+.result-area h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: gold;
+    text-shadow: 0 0 10px gold;
+}
+
+.result-area.loss h2 {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+.result-area img {
+    max-width: 100%;
+    max-height: 60%;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.result-area p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+canvas#scratch-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    touch-action: none; /* Prevent scrolling when scratching on mobile */
+    transition: opacity 0.5s ease-out;
+}
+
+canvas.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.blink {
+    animation: blinker 1.5s linear infinite;
+    color: var(--primary-color);
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
